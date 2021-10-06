@@ -6,6 +6,6 @@ namespace ModuleExtension
     {
         string Name { get; }
         string Author { get; }
-        void Transform(Bitmap app);
+        Bitmap Transform(Bitmap bitmap);
     }
 }

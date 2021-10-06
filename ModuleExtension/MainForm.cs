@@ -15,6 +15,8 @@ namespace ModuleExtension
     public partial class MainForm : Form
     {
         Dictionary<string, IPlugin> plugins = new Dictionary<string, IPlugin>();
+        Bitmap sourceImage;
+
         public MainForm()
         {
             InitializeComponent();
@@ -61,7 +63,12 @@ namespace ModuleExtension
         private void PluginClick(object sender, EventArgs args)
         {
             ToolStripItem item = (ToolStripItem)sender;
-            plugins[item.Text].Transform((Bitmap)pictureBox.Image);
+            pictureBox.Image = plugins[item.Text].Transform(sourceImage);
+        }
+
+        private void pictureBox_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            sourceImage = (Bitmap)pictureBox.Image;
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 namespace ModuleExtension
 {
     partial class MainForm
@@ -7,7 +9,6 @@ namespace ModuleExtension
         /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Освободить все используемые ресурсы.
         /// </summary>
@@ -38,13 +39,15 @@ namespace ModuleExtension
             // 
             // pictureBox
             // 
-            this.pictureBox.ImageLocation = "D:\\Downloads\\котик.jpg";
-            this.pictureBox.Location = new System.Drawing.Point(109, 92);
+            this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox.ImageLocation = "cat.jpg";
+            this.pictureBox.Location = new System.Drawing.Point(0, 24);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(298, 357);
+            this.pictureBox.Size = new System.Drawing.Size(484, 437);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
+            this.pictureBox.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.pictureBox_LoadCompleted);
             // 
             // main_menu
             // 
