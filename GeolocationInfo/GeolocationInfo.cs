@@ -20,7 +20,7 @@ namespace GeolocationInfo
             MagickImageFactory imageFactory = new MagickImageFactory();
             using (var magickImage = new MagickImage(imageFactory.Create(bitmap)))
             {
-                var profile = magickImage.GetExifProfile();
+                IExifProfile profile = magickImage.GetExifProfile();
                 // Check if image contains an exif profile
                 if (profile == null)
                 {
@@ -29,20 +29,11 @@ namespace GeolocationInfo
                 }
                 else
                 {
-                    // Write all values to the console
-                    foreach (var value in profile.Values)
-                    {
-                        if (value.Tag == ExifTag.GPSLatitude)
-                        {
-                            var values = (Rational[])value.GetValue();
-                            latitude = string.Format(latitude, values[0].ToDouble(), values[1].ToDouble(), values[2].ToDouble());
-                        }
-                        else if (value.Tag == ExifTag.GPSLongitude)
-                        {
-                            Rational[] values = (Rational[])value.GetValue();
-                            longtitude = string.Format(longtitude, values[0].ToDouble(), values[1].ToDouble(), values[2].ToDouble());
-                        }
-                    }
+                    var latitude_values = profile.GetValue(ExifTag.GPSLatitude)?.Value;
+                    latitude = latitude_values != null ? string.Format(latitude, latitude_values[0].ToDouble(), latitude_values[1].ToDouble(), latitude_values[2].ToDouble()) : "Широта: данные отсутствуют";
+
+                    var longtitude_values = profile.GetValue(ExifTag.GPSLongitude)?.Value;
+                    longtitude = longtitude_values != null ? string.Format(longtitude, longtitude_values[0].ToDouble(), longtitude_values[1].ToDouble(), longtitude_values[2].ToDouble()) : "Долгота: данные отсутствуют";
                 }
                 int font_size = magickImage.Width / 32;
                 new Drawables()
