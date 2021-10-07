@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleExtension", "ModuleExtension\ModuleExtension.csproj", "{9223C940-BC70-4B61-BE1E-A4F7FEDD4D4C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterface", "PluginInterface\PluginInterface.csproj", "{3AA740DB-5A68-4933-911B-E3D7685008EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeolocationInfoLib", "GeolocationInfo\GeolocationInfoLib.csproj", "{02249FF8-1BF6-4209-9BE0-9A0EC0CAA13B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleExtension", "ModuleExtension\ModuleExtension.csproj", "{DF72C685-7233-400F-B077-3C3B42DED742}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9223C940-BC70-4B61-BE1E-A4F7FEDD4D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9223C940-BC70-4B61-BE1E-A4F7FEDD4D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9223C940-BC70-4B61-BE1E-A4F7FEDD4D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9223C940-BC70-4B61-BE1E-A4F7FEDD4D4C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3AA740DB-5A68-4933-911B-E3D7685008EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3AA740DB-5A68-4933-911B-E3D7685008EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AA740DB-5A68-4933-911B-E3D7685008EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{02249FF8-1BF6-4209-9BE0-9A0EC0CAA13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02249FF8-1BF6-4209-9BE0-9A0EC0CAA13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02249FF8-1BF6-4209-9BE0-9A0EC0CAA13B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF72C685-7233-400F-B077-3C3B42DED742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF72C685-7233-400F-B077-3C3B42DED742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF72C685-7233-400F-B077-3C3B42DED742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF72C685-7233-400F-B077-3C3B42DED742}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

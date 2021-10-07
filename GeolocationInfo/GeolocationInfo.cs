@@ -2,14 +2,25 @@
 using ImageMagick;
 using System.Drawing;
 using System;
+using System.Reflection;
+using System.Linq;
 
 namespace GeolocationInfo
 {
     public class GeolocationInfo : IPlugin
     {
-        public string Name => "Отобразить геолокацию";
+        public string DisplayName => "Отобразить геолокацию";
+        public string Name {
+            get{
+                var attr = typeof(GeolocationInfo).Assembly.GetCustomAttributes(typeof(AssemblyTitleAttribute)).SingleOrDefault() as AssemblyTitleAttribute;
+                return attr?.Title;
+            }
+        }
+
 
         public string Author => "Dmitry Telegin";
+
+        public Version Version => typeof(GeolocationInfo).Assembly.GetName().Version;
 
         public Bitmap Transform(Bitmap bitmap)
         {
